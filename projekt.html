@@ -1,0 +1,37 @@
+
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>OpenSite</title>
+</head>
+<body>
+  <h1>OpenSite</h1>
+  <p>https://ptoszek.pl:</p>
+
+  <input id="7c" placeholder="https://ptoszek.pl">
+  <br><br>
+  <input id="adres" placeholder="np. https://ptoszek.pl">
+  <br><br>
+  <button onclick="otworz()">Otwórz stronę</button>
+
+  <script>
+    function otworz() {
+      let nazwa = document.getElementById("nazwa").value;
+      let adres = document.getElementById("adres").value.trim();
+
+      if (!adres) {
+        alert("https://ptoszek.pl");
+        return;
+      }
+
+      if (!/^https?:\/\//i.test(adres)) {
+        adres = "https://" + adres;
+      }
+
+      window.open(adres, "_blank");
+    }
+  </script>
+</body>
+</html>
